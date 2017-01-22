@@ -1,8 +1,11 @@
 const Discord = require("discord.js");
 const client = new Discord.Client();
 var newUsers = new Discord.Collection();
+var delay=500; //1 second
 
-//!commands - defines ! as prefix for command
+//########!commands######## 
+
+//defines ! as prefix for command
 client.on("message", msg => {
   let prefix = "!";
   if(!msg.content.startsWith(prefix)) return;
@@ -11,7 +14,31 @@ client.on("message", msg => {
   if (msg.content.startsWith(prefix + "tits")) {
     msg.channel.sendMessage("[insert tit pic here]")
   }
+
+//!opinion
+  if (msg.content.startsWith(prefix + "opinion")){
+    let userToOpinion = msg.mentions.users.first();
+    msg.channel.sendMessage(`Computing Correct Opinion...`);
+
+    let opinions = [userToOpinion + " is probably right.", 
+      userToOpinion + " is probably wrong.",
+      userToOpinion + " probably just needs a kiss.",
+      userToOpinion + " should consult the rules for more information.",
+      "When was the last time you had a cum, " + userToOpinion + "?", 
+      userToOpinion + " speaks total truth.",
+      userToOpinion + " is correct, dispite popular belief.",
+      "Classic appeal to ridicule," + userToOpinion +". Try harder next time."];
+    let i = Math.floor(Math.random() * 7);
+    let selectedopinion = opinions[i];
+    setTimeout(function() {
+      msg.channel.sendMessage(`${selectedopinion}`);
+}, delay);
+   
+  }
+
 });
+
+//############end of !commands########
 
 //14 words for roasty
 client.on("message", msg => {
