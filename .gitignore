@@ -1,0 +1,10 @@
+# OS generated #
+.DS_Store
+.DS_Store? 
+._*
+._Spotlight-V100
+.Trashes
+.ehthumbs.db
+
+# directories #
+/node_modules/
