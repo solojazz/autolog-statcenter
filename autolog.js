@@ -2,6 +2,16 @@ const Discord = require("discord.js");
 const client = new Discord.Client();
 var newUsers = new Discord.Collection();
 
+//!commands - defines ! as prefix for command
+client.on("message", msg => {
+  let prefix = "!";
+  if(!msg.content.startsWith(prefix)) return;
+
+//!tits
+  if (msg.content.startsWith(prefix + "tits")) {
+    msg.channel.sendMessage("[insert tit pic here]")
+  }
+});
 
 //14 words for roasty
 client.on("message", msg => {
