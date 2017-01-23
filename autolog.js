@@ -1,3 +1,8 @@
+/* 
+autolog-statcenter 
+a lush discord bot built on discord.js for chatmm
+by andihow roasty and the best of the chatmm massive
+*/
 const Discord = require("discord.js");
 const client = new Discord.Client();
 var newUsers = new Discord.Collection();
@@ -18,9 +23,9 @@ client.on("message", msg => {
 //!opinion
   if (msg.content.startsWith(prefix + "opinion")){
     let userToOpinion = msg.mentions.users.first();
-    msg.channel.sendMessage(`Computing Correct Opinion...`);
+    msg.channel.sendMessage(`Computing Objectively Correct Opinion...`);
 
-    let opinions = [userToOpinion + " is probably right.", 
+    let opinions = [ 
       userToOpinion + " is probably wrong.",
       userToOpinion + " probably just needs a kiss.",
       userToOpinion + " should consult the rules for more information.",
@@ -28,7 +33,7 @@ client.on("message", msg => {
       userToOpinion + " speaks total truth.",
       userToOpinion + " is correct, dispite popular belief.",
       "Classic appeal to ridicule," + userToOpinion +". Try harder next time."];
-    let i = Math.floor(Math.random() * 7);
+    let i = Math.floor(Math.random() * 6);
     let selectedopinion = opinions[i];
     setTimeout(function() {
       msg.channel.sendMessage(`${selectedopinion}`);

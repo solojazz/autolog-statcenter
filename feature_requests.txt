@@ -1,7 +1,5 @@
 [2:27 PM] triachus: !tits and then it gives a random google result of a tits image search
 
-[2:30 PM] triachus: !opinion and then it gives <opinion> about <random present username>
-
 [4:27 PM] andihow: an actual !stats command would be cool
 [4:27 PM] andihow: like !stats triachus
 [4:27 PM] andihow: "triachus has posted 3423974392 messages in the past 24 hours"
