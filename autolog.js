@@ -16,8 +16,8 @@ client.on("message", msg => {
   if(!msg.content.startsWith(prefix)) return;
 
 //!tits
-  if (msg.content.startsWith(prefix + "tits")) {
-    msg.channel.sendMessage("[insert tit pic here]")
+  if (msg.content.startsWith(prefix + "rarerdjpic")) {
+    msg.channel.sendMessage("[insert ginger pic here]")
   }
 
 //!opinion
