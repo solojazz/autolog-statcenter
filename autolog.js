@@ -6,7 +6,7 @@ by andihow roasty and the best of the chatmm massive
 const Discord = require("discord.js");
 const client = new Discord.Client();
 var newUsers = new Discord.Collection();
-var delay=500; //1 second
+var delay=500; //.5 second
 
 //########!commands######## 
 
@@ -24,7 +24,6 @@ client.on("message", msg => {
   if (msg.content.startsWith(prefix + "opinion")){
     let userToOpinion = msg.mentions.users.first();
     msg.channel.sendMessage(`Computing Objectively Correct Opinion...`);
-
     let opinions = [ 
       userToOpinion + " is probably wrong.",
       userToOpinion + " probably just needs a kiss.",
@@ -32,20 +31,20 @@ client.on("message", msg => {
       "When was the last time you had a cum, " + userToOpinion + "?", 
       userToOpinion + " speaks total truth.",
       userToOpinion + " is correct, dispite popular belief.",
-      "Classic appeal to ridicule," + userToOpinion +". Try harder next time."];
-    let i = Math.floor(Math.random() * 6);
+      "Classic appeal to ridicule, " + userToOpinion +". Try harder next time."];
+    let i = Math.floor(Math.random() * 7);
     let selectedopinion = opinions[i];
     setTimeout(function() {
       msg.channel.sendMessage(`${selectedopinion}`);
 }, delay);
-   
   }
 
 });
 
-//############end of !commands########
+//##End of !commands ####
 
-//14 words for roasty
+//Easter Eggs
+//Secret phrase triggers bot racism.
 client.on("message", msg => {
     if (msg.content.includes("14 words", "14 Words")) {
         msg.channel.sendMessage("We must secure the existence of our people and a future for white children.");
@@ -58,13 +57,13 @@ client.on("guildMemberAdd", (member) => {
     member.guild.defaultChannel.sendMessage(`"${member.user.username}" has entered the room.`);
 });
 
-//annoutnce user who's left
+//announce user who's left
 client.on("guildMemberRemove", (member) => {
   console.log(`New User "${member.user.username}" has left the room. `);
   member.guild.defaultChannel.sendMessage(`"${member.user.username}" has left the room.`)
 })
 
-//"I am alive" message for cli
+//"I am alive" message for cli console
 client.on('ready', () => {
 	console.log('I am running!!');
 });
