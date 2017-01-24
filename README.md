@@ -1,4 +1,4 @@
-!(https://i.imgur.com/uEiUkfV.png)
+![Logo](https://i.imgur.com/uEiUkfV.png)
 AutoLog StatCenter
 ==================
 
