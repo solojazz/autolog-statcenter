@@ -1,5 +1,5 @@
-/* 
-autolog-statcenter 
+/*
+autolog-statcenter
 a lush discord bot built on discord.js for chatmm
 by andihow roasty and the best of the chatmm massive
 */
@@ -8,37 +8,63 @@ const client = new Discord.Client();
 var newUsers = new Discord.Collection();
 var delay=500; //.5 second
 var currentYear = new Date().getFullYear();
+var currentdate = new Date();
+var datetime =  currentdate.getDate() + "/"+  (parseInt(currentdate.getMonth())    + 1)
+   + "/" + currentdate.getFullYear();
 
 
-//### !commands ### 
+
+//### !commands ###
 
 //defines ! as prefix for command
 client.on("message", msg => {
   let prefix = "!";
   if(!msg.content.startsWith(prefix)) return;
 
+//!help
+ if (msg.content.startsWith(prefix + "help")) {
+   msg.channel.sendMessage(`As of now, you can !currentyear, !cointoss, or !opinion`);
+   console.log(currentdate + " - Someone got help.");
+
+ }
+
 //!currentyear
   if (msg.content.startsWith(prefix + "currentyear")) {
     msg.channel.sendMessage(`The current year is ${currentYear}`);
+    console.log(currentdate + " - Displayed the Current Year");
   }
 
 //!opinion
   if (msg.content.startsWith(prefix + "opinion")){
     let userToOpinion = msg.mentions.users.first();
     msg.channel.sendMessage(`Computing Objectively Correct Opinion...`);
-    let opinions = [ 
+    let opinions = [
       userToOpinion + " is probably wrong.",
       userToOpinion + " probably just needs a kiss.",
-      userToOpinion + " should consult the rules for more information.",
-      "When was the last time you had a cum, " + userToOpinion + "?", 
+      userToOpinion + " is just being edgy tbh.",
+      "I'm shocked that you think that,  " + userToOpinion + ".",
       userToOpinion + " speaks total truth.",
       userToOpinion + " is correct, despite popular belief.",
-      "Classic appeal to ridicule, " + userToOpinion +". Try harder next time."];
+      "Thats right, " + userToOpinion +". Absolutely right."];
     let i = Math.floor(Math.random() * 7);
     let selectedopinion = opinions[i];
     setTimeout(function() {
       msg.channel.sendMessage(`${selectedopinion}`);
 }, delay);
+    console.log(currentdate + " - Corrected an opinion");
+  }
+//!cointoss
+  if (msg.content.startsWith(prefix + "cointoss")){
+    let userWhoTossed = msg.mentions.users.first();
+    msg.channel.sendMessage(`Rotating Airborn Coin...`);
+    let outcomes = [
+      "Heads.", "Tails."];
+    let i = Math.floor(Math.random() * 2);
+    let selectedoutcomes = outcomes[i];
+    setTimeout(function() {
+      msg.channel.sendMessage(`${selectedoutcomes}`);
+}, delay);
+    console.log(currentdate + " - Tossed a coin.");
   }
 
 });
@@ -47,53 +73,41 @@ client.on("message", msg => {
 //### Easter Eggs ###
 //Secret phrase triggers bot racism.
 client.on("message", msg => {
-    if ( (msg.content.includes("14 words")) || (msg.content.includes("14 Words")) || (msg.content.includes("kramer")) || (msg.content.includes("david duke")) ) {
-        msg.channel.sendMessage(`We must secure the existence of our people and a future for white children.`);
-    }
-});
-
-//Secret phrase t r i g g e r s SJW bot
-client.on("message", msg => {
-    if ( (msg.content.includes("RTS games")) || (msg.content.includes("gamergate"))  || (msg.content.includes("gamer gate")) || (msg.content.includes("Gamer Gate")) || (msg.content.includes("overwatch")) || (msg.content.includes("Overwatch")) ) {
-        msg.channel.sendMessage(`There's a toxicity within gaming culture, and also in tech culture, that drives this misogynist hatred, this reactionary backlash against women who have anything to say, especially those who have critiques or who are feminists.`);
-    }
-});
-
-client.on("message", msg => {
-    if ( (msg.content.includes("privilege")) || (msg.content.includes("Privilege")) ) {
-        msg.channel.sendMessage(`DONT TALK ABOUT PRIVILEGE YOU'RE A FUCKING WHITE MALE`);
+    if (msg.content.includes("14 words")) {
+        msg.channel.sendMessage(`https://cdn.discordapp.com/attachments/272344699434696705/273455453730635776/Dt8IGlA.png`);
+        console.log(currentdate + " - Smashed Racism");
     }
 });
 
 client.on("message", msg => {
     if (msg.content.includes("Zoe Quinn") || (msg.content.includes("zoe quinn")) ) {
         msg.channel.sendMessage(`https://www.patreon.com/zoe`);
+        console.log(currentdate + " - Helped out Zoe");
     }
 });
 
 //announce user who's entered
 client.on("guildMemberAdd", (member) => {
-    console.log(`New User "${member.user.username}" has entered the room.` );
+    console.log(currentdate + ` New User "${member.user.username}" has entered the room.` );
     member.guild.defaultChannel.sendMessage(`${member.user.username} has entered the room.`);
 });
 
 //announce user who's become active
 client.on("guildMemberAvailable", (member) => {
-    console.log(`New User "${member.user.username}" has entered the room.` );
+    console.log(currentdate + ` New User "${member.user.username}" has entered the room.` );
     member.guild.defaultChannel.sendMessage(`${member.user.username} has entered the room.`);
 });
 
 //announce user who's left
 client.on("guildMemberRemove", (member) => {
-  console.log(`New User "${member.user.username}" has left the room. `);
+  console.log(currentdate + ` New User "${member.user.username}" has left the room. `);
   member.guild.defaultChannel.sendMessage(`${member.user.username} has left the room.`)
 })
 
 //"I am alive" message for cli console
 client.on('ready', () => {
-	console.log('I am running!!');
+	console.log('It is ' + currentdate + ' and I have awoken!');
 });
-
 
 
 client.login("MjcyNjYzODAwNzkxMTcxMDcz.C2YXag.E3QfYe6WqrNLc9FyNG99pml7Hhw")

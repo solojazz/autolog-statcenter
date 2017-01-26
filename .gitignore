@@ -1,11 +1,15 @@
 # OS generated #
 .DS_Store
-.DS_Store? 
+.DS_Store?
 ._*
 ._Spotlight-V100
 .Trashes
 .ehthumbs.db
 
+# Backup files #
+*.bak
+Tele Quotes.txt
+feature_requests.txt
 # directories #
 /node_modules/
 /aws/
