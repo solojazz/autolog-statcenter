@@ -1,3 +1,6 @@
+* v1.6
+  * added !gender
+
 * v1.5
  * removed political convictions
  * added !cointoss
