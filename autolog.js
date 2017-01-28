@@ -35,8 +35,9 @@ client.on("message", msg => {
   }
 
 //!opinion
-  if (msg.content.startsWith(prefix + "opinion")){
-    let userToOpinion = msg.mentions.users.first();
+
+  let userToOpinion = msg.mentions.users.first();
+  if ( msg.content.startsWith(prefix + "opinion") && (typeof userToOpinion !== 'undefined') ){
     msg.channel.sendMessage(`Computing Objectively Correct Opinion...`);
     let opinions = [
       userToOpinion + " is probably wrong.",
