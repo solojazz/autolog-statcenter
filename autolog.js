@@ -35,7 +35,6 @@ client.on("message", msg => {
   }
 
 //!opinion
-
   let userToOpinion = msg.mentions.users.first();
   if ( msg.content.startsWith(prefix + "opinion") && (typeof userToOpinion !== 'undefined') ){
     msg.channel.sendMessage(`Computing Objectively Correct Opinion...`);
@@ -56,8 +55,8 @@ client.on("message", msg => {
   }
 
 //!gender
-if (msg.content.startsWith(prefix + "gender")){
   let userToGender = msg.mentions.users.first();
+  if ( msg.content.startsWith(prefix + "gender") && (typeof userToOpinion !== 'undefined') ){
   let genders = [
     ['Abimegender', 'A gender which is profound, deep, and infinite.'],
     ['Absorgender', 'A gender that changes to conform to the genders of those around you. As you are around more people, even if some leave, they continue to add to the genders you feel. You remain as the genders that you have taken in until you hit a max of some sort. At that point you become like a blank slate, being only one gender (it doesn’t have to be agender or neutral, it can be any gender and the base gender can be different each time). If you absorb one gender more easily than other genders, you can replace gender in the term with the gender you absorb best. Like *absorgirl*, *absornonbinary*, *absordemiboy*, etc.'],
