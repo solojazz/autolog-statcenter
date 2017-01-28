@@ -1,3 +1,6 @@
+* v1.7
+ * fixed bug where undefined input still passes command for !gender and !opinion
+
 * v1.6
   * added !gender
 
