@@ -474,7 +474,7 @@ client.on("message", msg => {
             var barks = [`WOOF WOOF WOOF WOOF WOOF WOOF`, `Native Woofstruments!`, `[undevined] has quickly become one of my favorite go-to plugins for sound design applications. AROOOOOOH`, `AROOOOOOOOOOOOOOOOOOOH`, `ARF ARF`, `BORK`];
 			// Select a random woof from Barks array
 			let pickBark = barks[Math.floor(Math.random() * barks.length)]; 
-			msg.channel.sendMessage(":dog: Richie D. the pup says: " + pickBark + ":dog:");
+			msg.channel.sendMessage(":dog: Richie D. the pup says: " + pickBark + " :dog:");
 		}
 
 //!cointoss
