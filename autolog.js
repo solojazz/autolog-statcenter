@@ -3,6 +3,7 @@ autolog-statcenter
 a lush discord bot built on discord.js for chatmm
 by andihow roasty and the best of the chatmm massive
 */
+var token = 'Mjc5MTEwMTc0MjYwNTkyNjQx.C32NeA.YEkLSJ2IxLkVzIsd3uQttDEXrPw';
 const Discord = require("discord.js");
 const client = new Discord.Client();
 var newUsers = new Discord.Collection();
@@ -470,10 +471,10 @@ client.on("message", msg => {
   }
 
 //!dog
-		if (msg.content.startsWith(prefix + "dog")) {
-				// Select a random woof from Barks array
-				let pickBark = barks[Math.floor(Math.random() * barks.length)]; 
-				msg.channel.sendMessage("🐶 Richie the dog says: " + pickBark + "🐶");
+	if (msg.content.startsWith(prefix + "dog")) {
+			// Select a random woof from Barks array
+			let pickBark = barks[Math.floor(Math.random() * barks.length)]; 
+			msg.channel.sendMessage("🐶 Richie the dog says: " + pickBark + "🐶");
 		}
 
 //!cointoss
@@ -532,4 +533,4 @@ client.on('ready', () => {
 	console.log('It is ' + currentdate + ' and I have awoken!');
 });
 
-client.login("Mjc5MTEwMTc0MjYwNTkyNjQx.C32NeA.YEkLSJ2IxLkVzIsd3uQttDEXrPw");
+client.login(token);
