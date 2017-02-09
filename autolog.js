@@ -3,15 +3,16 @@ autolog-statcenter
 a lush discord bot built on discord.js for chatmm
 by andihow roasty and the best of the chatmm massive
 */
+var token = 'Mjc5MTEwMTc0MjYwNTkyNjQx.C32NeA.YEkLSJ2IxLkVzIsd3uQttDEXrPw';
 const Discord = require("discord.js");
 const client = new Discord.Client();
 var newUsers = new Discord.Collection();
 var delay=500; //.5 second
 var currentYear = new Date().getFullYear();
 var currentdate = new Date();
+var barks = ["Woof!", "Bark Bark!", "Grrr!"];
 var datetime =  currentdate.getDate() + "/"+  (parseInt(currentdate.getMonth())    + 1)
    + "/" + currentdate.getFullYear();
-
 
 
 //### !commands ###
@@ -23,7 +24,7 @@ client.on("message", msg => {
 
 //!help
  if (msg.content.startsWith(prefix + "help")) {
-   msg.channel.sendMessage(`As of now, you can !currentyear, !cointoss, !hype, !gender or !opinion`);
+   msg.channel.sendMessage(`As of now, you can !currentyear, !cointoss, !dog, !hype, !gender or !opinion`);
    console.log(currentdate + " - Someone got help.");
 
  }
@@ -469,6 +470,13 @@ client.on("message", msg => {
     console.log(currentdate + " - Generated Hype");
   }
 
+//!dog
+	if (msg.content.startsWith(prefix + "dog")) {
+			// Select a random woof from Barks array
+			let pickBark = barks[Math.floor(Math.random() * barks.length)]; 
+			msg.channel.sendMessage("🐶 Richie the dog says: " + pickBark + "🐶");
+		}
+
 //!cointoss
   if (msg.content.startsWith(prefix + "cointoss")){
     let userWhoTossed = msg.mentions.users.first();
@@ -525,5 +533,4 @@ client.on('ready', () => {
 	console.log('It is ' + currentdate + ' and I have awoken!');
 });
 
-
-client.login("MjcyNjYzODAwNzkxMTcxMDcz.C2YXag.E3QfYe6WqrNLc9FyNG99pml7Hhw")
+client.login(token);
