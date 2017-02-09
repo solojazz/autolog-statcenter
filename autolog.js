@@ -10,7 +10,6 @@ var newUsers = new Discord.Collection();
 var delay=500; //.5 second
 var currentYear = new Date().getFullYear();
 var currentdate = new Date();
-var barks = ["Woof!", "Bark Bark!", "Grrr!"];
 var datetime =  currentdate.getDate() + "/"+  (parseInt(currentdate.getMonth())    + 1)
    + "/" + currentdate.getFullYear();
 
@@ -470,11 +469,12 @@ client.on("message", msg => {
     console.log(currentdate + " - Generated Hype");
   }
 
-//!dog
-	if (msg.content.startsWith(prefix + "dog")) {
+//!doggo
+	if (msg.content.startsWith(prefix + "doggo")) {
+            var barks = [`WOOF WOOF WOOF WOOF WOOF WOOF`, `Native Instruments!`, `[undevined] has quickly beocome one of my favorite go-to plugins for sound design applications`];
 			// Select a random woof from Barks array
 			let pickBark = barks[Math.floor(Math.random() * barks.length)]; 
-			msg.channel.sendMessage("🐶 Richie the dog says: " + pickBark + "🐶");
+			msg.channel.sendMessage(":dog: Richie D. the pup says: " + pickBark + ":dog:");
 		}
 
 //!cointoss
