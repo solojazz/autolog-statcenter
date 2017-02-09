@@ -471,11 +471,9 @@ client.on("message", msg => {
 
 //!dog
 		if (msg.content.startsWith(prefix + "dog")) {
-
-					// Select a random woof from Barks array
-					let pickBark = barks[Math.floor(Math.random() * barks.length)]; 
-					msg.channel.sendMessage("🐶 Richie the dog says: " + pickBark + "🐶");
-					
+				// Select a random woof from Barks array
+				let pickBark = barks[Math.floor(Math.random() * barks.length)]; 
+				msg.channel.sendMessage("🐶 Richie the dog says: " + pickBark + "🐶");
 		}
 
 //!cointoss
