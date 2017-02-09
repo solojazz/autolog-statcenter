@@ -3,7 +3,7 @@ autolog-statcenter
 a lush discord bot built on discord.js for chatmm
 by andihow roasty and the best of the chatmm massive
 */
-var token = 'Mjc5MTEwMTc0MjYwNTkyNjQx.C32NeA.YEkLSJ2IxLkVzIsd3uQttDEXrPw';
+var token = '**';
 const Discord = require("discord.js");
 const client = new Discord.Client();
 var newUsers = new Discord.Collection();
@@ -471,7 +471,7 @@ client.on("message", msg => {
 
 //!doggo
 	if (msg.content.startsWith(prefix + "doggo")) {
-            var barks = [`WOOF WOOF WOOF WOOF WOOF WOOF`, `Native Instruments!`, `[undevined] has quickly beocome one of my favorite go-to plugins for sound design applications`];
+            var barks = [`WOOF WOOF WOOF WOOF WOOF WOOF`, `Native Woofstruments!`, `[undevined] has quickly become one of my favorite go-to plugins for sound design applications. AROOOOOOH`, `AROOOOOOOOOOOOOOOOOOOH`, `ARF ARF`, `BORK`];
 			// Select a random woof from Barks array
 			let pickBark = barks[Math.floor(Math.random() * barks.length)]; 
 			msg.channel.sendMessage(":dog: Richie D. the pup says: " + pickBark + ":dog:");
