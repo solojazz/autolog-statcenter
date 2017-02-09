@@ -475,6 +475,7 @@ client.on("message", msg => {
 			// Select a random woof from Barks array
 			let pickBark = barks[Math.floor(Math.random() * barks.length)]; 
 			msg.channel.sendMessage(":dog: Richie D. the pup says: " + pickBark + " :dog:");
+            console.log("WOOF WOOF");
 		}
 
 //!cointoss
