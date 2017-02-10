@@ -23,7 +23,7 @@ client.on("message", msg => {
 
 //!help
  if (msg.content.startsWith(prefix + "help")) {
-   msg.channel.sendMessage(`As of now, you can !currentyear, !cointoss, !dog, !hype, !gender or !opinion`);
+   msg.channel.sendMessage(`As of now, you can !currentyear, !cointoss, !doggo, !hype, !gender or !opinion`);
    console.log(currentdate + " - Someone got help.");
 
  }
@@ -77,10 +77,10 @@ client.on("message", msg => {
 
 //!doggo
 	if (msg.content.startsWith(prefix + "doggo")) {
-            var barks = [`WOOF WOOF WOOF WOOF WOOF WOOF`, `Native Woofstruments!`, `[undevined] has quickly become one of my favorite go-to plugins for sound design applications. AROOOOOOH`, `AROOOOOOOOOOOOOOOOOOOH`, `ARF ARF`, `BORK`];
+            let barks = require('./barks.js').barks;
 			// Select a random woof from Barks array
 			let pickBark = barks[Math.floor(Math.random() * barks.length)]; 
-			msg.channel.sendMessage(":dog: Richie D. the pup says: " + pickBark + " :dog:");
+			msg.channel.sendMessage(":dog: Richie D. The Pup: " + pickBark + " :dog:");
             console.log("WOOF WOOF");
 		}
 
