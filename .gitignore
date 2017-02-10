@@ -6,9 +6,10 @@
 .Trashes
 .ehthumbs.db
 
-# Backup files #
+# files #
 *.bak
 *.txt
+*.log
 
 # directories #
 /node_modules/
