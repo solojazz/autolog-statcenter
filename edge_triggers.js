@@ -17,6 +17,11 @@ let edge_triggers = [
     "gay",
     ")))",
     "(((",
+    "gavin",
+    "mcinnes",
+    "milo",
+    "infowars",
+    "ptsd",
     ];
 
     exports.edge_triggers = edge_triggers
