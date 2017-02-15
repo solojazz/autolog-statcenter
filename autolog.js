@@ -12,12 +12,6 @@ var currentYear = new Date().getFullYear();
 var currentdate = new Date();
 var datetime = currentdate.getDate() + "/" + (parseInt(currentdate.getMonth()) + 1) + "/" + currentdate.getFullYear();
 
-// EdgeCounter variables
-var edge_counter;
-var edge_timeout;
-var edge_delay = 1000*60*5 // 5 minute timeout 
-
-
 //### !commands ###
 
 //defines ! as prefix for command
