@@ -22,6 +22,8 @@ let edge_triggers = [
     "milo",
     "infowars",
     "ptsd",
+    "redpill",
+    "red pill",
     ];
 
     exports.edge_triggers = edge_triggers
