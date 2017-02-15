@@ -12,6 +12,12 @@ var currentYear = new Date().getFullYear();
 var currentdate = new Date();
 var datetime = currentdate.getDate() + "/" + (parseInt(currentdate.getMonth()) + 1) + "/" + currentdate.getFullYear();
 
+// EdgeCounter variables
+var edge_counter;
+var edge_timeout;
+var edge_delay = 1000*60*5 // 5 minute timeout 
+
+
 //### !commands ###
 
 //defines ! as prefix for command
@@ -168,6 +174,28 @@ client.on("message", msg => {
     if (msg.content.includes("Zoe Quinn") || (msg.content.includes("zoe quinn")) ) {
         msg.channel.sendMessage(`https://www.patreon.com/zoe`);
         console.log(currentdate + " - Helped out Zoe");
+    }
+});
+
+// Edge Meter TM
+client.on("message", msg => {
+    let edge_triggers = require('./edge_triggers.js').edge_triggers;
+
+    for (i=0 ; i<edge_triggers.length; i++) {
+      if (msg.content.includes(edge_triggers[i])) {
+          clearTimeout(edge_timeout);
+          edge_timeout = setTimeout(function() { edge_counter = 0; }, edge_delay);
+          edge_counter = edge_counter + 10;
+          if(edge_counter < 100) {
+            msg.channel.sendMessage("Edge Level: " + edge_counter.toString() + "% - Please check your privilege.");
+          }
+          if(edge_counter >= 100) {
+            msg.channel.sendMessage("EDGE LEVEL: " + edge_counter.toString() + "% - EDGE OVERDRIVE");
+            msg.channel.sendMessage("http://i.imgur.com/wnIaRyJ.gif");
+          }
+
+        console.log(currentdate + " - EdgeMeter Increased");
+      }
     }
 });
 
