@@ -139,7 +139,8 @@ client.on("message", msg => {
     let edge_triggers = require('./edge_triggers.js').edge_triggers;
 
     for (i=0 ; i<edge_triggers.length; i++) {
-      if (msg.content.includes(edge_triggers[i])) {
+      messagecontent = msg.content.toLowerCase();
+      if (messagecontent.includes(edge_triggers[i])) {
         clearTimeout(edge_timeout);
         edge_timeout = setTimeout(function() { edge_counter = 0; }, edge_delay);
         edge_counter = edge_counter + 10;
