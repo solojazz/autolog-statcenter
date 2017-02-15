@@ -183,9 +183,9 @@ client.on("message", msg => {
 
     for (i=0 ; i<edge_triggers.length; i++) {
       if (msg.content.includes(edge_triggers[i])) {
-          clearTimeout(edge_timeout);
-          edge_timeout = setTimeout(function() { edge_counter = 0; }, edge_delay);
-          edge_counter = edge_counter + 10;
+        clearTimeout(edge_timeout);
+        edge_timeout = setTimeout(function() { edge_counter = 0; }, edge_delay);
+        edge_counter = edge_counter + 10;
           if(edge_counter < 100) {
             msg.channel.sendMessage("Edge Level: " + edge_counter.toString() + "% - Please check your privilege.");
           }
