@@ -152,8 +152,8 @@ client.on("message", msg => {
             msg.channel.sendMessage("http://i.imgur.com/wnIaRyJ.gif");
           }
           if (edge_counter >= 200) {
-            msg.channel.sendMessage(":warning: :warning: **EDGE LEVEL: " + edge_counter.tostring() + "% = EDGE CORE MELTDOWN IMMINENT :warning: :warning:");
-            msg.channel.sendMEssage("")
+            msg.channel.sendMessage(":warning: :warning: **EDGE LEVEL: " + edge_counter.toString() + "% = EDGE CORE MELTDOWN IMMINENT :warning: :warning:");
+            msg.channel.sendMEssage("http://i.imgur.com/avHnbUZ.gif");
           }
 
         console.log(currentdate + " - EdgeMeter Increased");
