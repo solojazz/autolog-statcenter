@@ -24,6 +24,7 @@ let edge_triggers = [
     "ptsd",
     "redpill",
     "red pill",
+    "world peace",
     ];
 
     exports.edge_triggers = edge_triggers
