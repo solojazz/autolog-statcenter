@@ -146,14 +146,14 @@ client.on("message", msg => {
 
     for (i=0 ; i<edge_triggers.length; i++) {
       if (msg.content.includes(edge_triggers[i])) {
-          clearTimeout(edge_timeout);
-          edge_timeout = setTimeout(function() { edge_counter = 0; }, edge_delay);
-          edge_counter = edge_counter + 10;
+        clearTimeout(edge_timeout);
+        edge_timeout = setTimeout(function() { edge_counter = 0; }, edge_delay);
+        edge_counter = edge_counter + 10;
           if(edge_counter < 100) {
             msg.channel.sendMessage("Edge Level: " + edge_counter.toString() + "% - Please check your privilege.");
           }
           if(edge_counter >= 100) {
-            msg.channel.sendMessage("EDGE LEVEL: " + edge_counter.toString() + "% - EDGE OVERDRIVE");
+            msg.channel.sendMessage(":warning: :warning: **EDGE LEVEL: " + edge_counter.toString() + "% - EDGE OVERDRIVE** :warning: :warning:");
             msg.channel.sendMessage("http://i.imgur.com/wnIaRyJ.gif");
           }
 
@@ -174,28 +174,6 @@ client.on("message", msg => {
     if (msg.content.includes("Zoe Quinn") || (msg.content.includes("zoe quinn")) ) {
         msg.channel.sendMessage(`https://www.patreon.com/zoe`);
         console.log(currentdate + " - Helped out Zoe");
-    }
-});
-
-// Edge Meter TM
-client.on("message", msg => {
-    let edge_triggers = require('./edge_triggers.js').edge_triggers;
-
-    for (i=0 ; i<edge_triggers.length; i++) {
-      if (msg.content.includes(edge_triggers[i])) {
-        clearTimeout(edge_timeout);
-        edge_timeout = setTimeout(function() { edge_counter = 0; }, edge_delay);
-        edge_counter = edge_counter + 10;
-          if(edge_counter < 100) {
-            msg.channel.sendMessage("Edge Level: " + edge_counter.toString() + "% - Please check your privilege.");
-          }
-          if(edge_counter >= 100) {
-            msg.channel.sendMessage(":warning: :warning: **EDGE LEVEL: " + edge_counter.toString() + "% - EDGE OVERDRIVE** :warning: :warning:");
-            msg.channel.sendMessage("http://i.imgur.com/wnIaRyJ.gif");
-          }
-
-        console.log(currentdate + " - EdgeMeter Increased");
-      }
     }
 });
 
