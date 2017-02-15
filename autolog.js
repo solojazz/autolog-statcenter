@@ -34,6 +34,19 @@ client.on("message", msg => {
     console.log(currentdate + " - Displayed the Current Year");
   }
 
+//!hug
+  if (msg.content.startsWith(prefix + "hug")) {
+    let userToHug = msg.author;
+    msg.channel.sendMessage(`*gives ${userToHug} a warm hug.*`)
+    console.log(currentdate + " Gave a hug.");
+  }
+
+//!grouphug
+  if (msg.content.startsWith(prefix + "grouphug")) {
+    msg.channel.sendMessage(`:heart: :heart: :heart: @everyone partakes in a compulsary group hug. :heart: :heart: :heart: `);
+    console.log(currentdate + " was fascist about hugs.");
+  }
+
 //!opinion
   let userToOpinion = msg.mentions.users.first();
   if ( msg.content.startsWith(prefix + "opinion") && (typeof userToOpinion !== 'undefined') ){
@@ -85,7 +98,7 @@ client.on("message", msg => {
 		}
 
 //!cointoss
-  if (msg.content.startsWith(prefix + "cointoss")){
+  if (msg.content.startsWith(prefix + "cointoss")) {
     let userWhoTossed = msg.mentions.users.first();
     msg.channel.sendMessage(`Rotating Airborn Coin...`);
     let outcomes = [
@@ -95,10 +108,11 @@ client.on("message", msg => {
     setTimeout(function() {
       msg.channel.sendMessage(`${selectedoutcomes}`);
 }, delay);
-    console.log(currentdate + " - Tossed a coin.");
+    console.log(currentdate + " " + userWhoTossed + " Tossed a coin.");
   }
 
 });
+
 //### End of !commands ###
 
 //### Easter Eggs ###
