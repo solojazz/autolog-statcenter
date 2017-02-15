@@ -190,7 +190,7 @@ client.on("message", msg => {
             msg.channel.sendMessage("Edge Level: " + edge_counter.toString() + "% - Please check your privilege.");
           }
           if(edge_counter >= 100) {
-            msg.channel.sendMessage("EDGE LEVEL: " + edge_counter.toString() + "% - EDGE OVERDRIVE");
+            msg.channel.sendMessage(":warning: :warning: **EDGE LEVEL: " + edge_counter.toString() + "% - EDGE OVERDRIVE** :warning: :warning:");
             msg.channel.sendMessage("http://i.imgur.com/wnIaRyJ.gif");
           }
 
