@@ -3,7 +3,7 @@ autolog-statcenter
 a lush discord bot built on discord.js for chatmm
 by andihow roasty and the best of the chatmm massive
 */
-var token = '**';
+var token = 'MjcyNjYzODAwNzkxMTcxMDcz.C4ZEwA.wBiHC3ZNM75_scxjUcOD_hI6LJs';
 const Discord = require("discord.js");
 const client = new Discord.Client();
 var newUsers = new Discord.Collection();
@@ -28,7 +28,7 @@ client.on("message", msg => {
 //!johnsim
   if (msg.content.startsWith(prefix + "johnsim")) {
     let userinput = msg.content;
-    jonpinion = userinput.substring(userinput.indexOf("!") + 8);
+    jonpinion = userinput.substring(8, 1800);
     let adjective1s = [`shocked`, `disturbed`, `weirded out`, `at a loss for words`];
     let johnner = msg.author;
     let adjective2s = [`moronic`, `disturbing`, `hilarious`, `retarded`, `fucked up`, `crazy`, `surreal`, `creepy`];
@@ -55,7 +55,7 @@ client.on("message", msg => {
 
 //!grouphug
   if (msg.content.startsWith(prefix + "grouphug")) {
-    msg.channel.sendMessage(`:heart: :heart: :heart: @everyone partakes in a compulsary group hug. :heart: :heart: :heart: `);
+    msg.channel.sendMessage(`:heart: :heart: :heart: @everyone partakes in a compulsory group hug. :heart: :heart: :heart: `);
     console.log(currentdate + " was fascist about hugs.");
   }
 
@@ -150,6 +150,10 @@ client.on("message", msg => {
           if(edge_counter >= 100) {
             msg.channel.sendMessage(":warning: :warning: **EDGE LEVEL: " + edge_counter.toString() + "% - EDGE OVERDRIVE** :warning: :warning:");
             msg.channel.sendMessage("http://i.imgur.com/wnIaRyJ.gif");
+          }
+          if (edge_counter >= 200) {
+            msg.channel.sendMessage(":warning: :warning: **EDGE LEVEL: " + edge_counter.tostring() + "% = EDGE CORE MELTDOWN IMMINENT :warning: :warning:");
+            msg.channel.sendMEssage("")
           }
 
         console.log(currentdate + " - EdgeMeter Increased");
