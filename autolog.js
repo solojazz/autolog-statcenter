@@ -150,12 +150,12 @@ client.on("message", msg => {
       if(edge_counter < 100) {
         msg.channel.sendMessage("Edge Level: " + edge_counter.toString() + "% - Please check your privilege.");
       }
-      if(edge_counter >= 100) {
+      if(edge_counter >= 100 && edge_counter < 200) {
         msg.channel.sendMessage(":warning: :warning: **EDGE LEVEL: " + edge_counter.toString() + "% - EDGE OVERDRIVE** :warning: :warning:");
         msg.channel.sendMessage("http://i.imgur.com/wnIaRyJ.gif");
       }
       if (edge_counter >= 200) {
-        msg.channel.sendMessage(":warning: :warning: **EDGE LEVEL: " + edge_counter.toString() + "% = EDGE CORE MELTDOWN IMMINENT :warning: :warning:");
+        msg.channel.sendMessage(":warning: :warning: **EDGE LEVEL: " + edge_counter.toString() + "% = EDGE CORE MELTDOWN IMMINENT** :warning: :warning:");
         msg.channel.sendMessage("http://i.imgur.com/avHnbUZ.gif");
       }
       console.log(currentdate + " - EdgeMeter Increased");
