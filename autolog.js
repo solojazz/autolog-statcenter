@@ -132,32 +132,33 @@ client.on("message", msg => {
 // EdgeMeter variables
 var edge_counter = 0;
 var edge_timeout;
-var edge_delay = 1000*60*5 // 5 minute timeout 
+var edge_delay = 1000*60*5; // 5 minute timeout
 
 // Edge Meter TM
 client.on("message", msg => {
     let edge_triggers = require('./edge_triggers.js').edge_triggers;
+    let edge_found = false;
 
-    for (i=0 ; i<edge_triggers.length; i++) {
+    for (i=0 ; i<edge_triggers.length; i++) { 
       messagecontent = msg.content.toLowerCase();
-      if (messagecontent.includes(edge_triggers[i])) {
-        clearTimeout(edge_timeout);
-        edge_timeout = setTimeout(function() { edge_counter = 0; }, edge_delay);
-        edge_counter = edge_counter + 10;
-          if(edge_counter < 100) {
-            msg.channel.sendMessage("Edge Level: " + edge_counter.toString() + "% - Please check your privilege.");
-          }
-          if(edge_counter >= 100) {
-            msg.channel.sendMessage(":warning: :warning: **EDGE LEVEL: " + edge_counter.toString() + "% - EDGE OVERDRIVE** :warning: :warning:");
-            msg.channel.sendMessage("http://i.imgur.com/wnIaRyJ.gif");
-          }
-          if (edge_counter >= 200) {
-            msg.channel.sendMessage(":warning: :warning: **EDGE LEVEL: " + edge_counter.toString() + "% = EDGE CORE MELTDOWN IMMINENT :warning: :warning:");
-            msg.channel.sendMEssage("http://i.imgur.com/avHnbUZ.gif");
-          }
-
-        console.log(currentdate + " - EdgeMeter Increased");
+      if (messagecontent.includes(edge_triggers[i])) { edge_found = true }
+    }
+    if (edge_found){
+      clearTimeout(edge_timeout);
+      edge_timeout = setTimeout(function() { edge_counter = 0; }, edge_delay);
+      edge_counter = edge_counter + 10;
+      if(edge_counter < 100) {
+        msg.channel.sendMessage("Edge Level: " + edge_counter.toString() + "% - Please check your privilege.");
       }
+      if(edge_counter >= 100) {
+        msg.channel.sendMessage(":warning: :warning: **EDGE LEVEL: " + edge_counter.toString() + "% - EDGE OVERDRIVE** :warning: :warning:");
+        msg.channel.sendMessage("http://i.imgur.com/wnIaRyJ.gif");
+      }
+      if (edge_counter >= 200) {
+        msg.channel.sendMessage(":warning: :warning: **EDGE LEVEL: " + edge_counter.toString() + "% = EDGE CORE MELTDOWN IMMINENT :warning: :warning:");
+        msg.channel.sendMEssage("http://i.imgur.com/avHnbUZ.gif");
+      }
+      console.log(currentdate + " - EdgeMeter Increased");
     }
 });
 
