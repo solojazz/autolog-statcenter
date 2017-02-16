@@ -26,6 +26,7 @@ let edge_triggers = [
     "world peace",
     "zionist",
     "zionism",
+    "cuck",
     ];
 
     exports.edge_triggers = edge_triggers
