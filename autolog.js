@@ -3,7 +3,7 @@ autolog-statcenter
 a lush discord bot built on discord.js for chatmm
 by andihow roasty and the best of the chatmm massive
 */
-var token = 'MjcyNjYzODAwNzkxMTcxMDcz.C4ZEwA.wBiHC3ZNM75_scxjUcOD_hI6LJs';
+var token = '**';
 const Discord = require("discord.js");
 const client = new Discord.Client();
 var newUsers = new Discord.Collection();
