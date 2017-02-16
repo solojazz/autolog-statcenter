@@ -24,8 +24,7 @@ let edge_triggers = [
     "redpill",
     "red pill",
     "world peace",
-    "zionist",
-    "zionism",
+    "zion",
     "cuck",
     ];
 
