@@ -14,7 +14,7 @@ let edge_triggers = [
     "fag",
     "faggot",
     "rape",
-    "gay",
+    "(((",
     ")))",
     "gavin",
     "mcinnes",
