@@ -33,6 +33,7 @@ let edge_triggers = [
     "nigga",
     "nigger",
     "normie",
+    "pizzagate",
     "pepe",
     "politically correct",
     "post truth",
