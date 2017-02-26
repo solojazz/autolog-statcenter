@@ -34,6 +34,7 @@ let edge_triggers = [
     "high energy",
     "human biodiversity",
     "infowars",
+    "jew",
     "kangs",
     "kangz",
     "kek",
