@@ -3,7 +3,8 @@ autolog-statcenter
 a lush discord bot built on discord.js for chatmm
 by andihow roasty and the best of the chatmm massive
 */
-var token = '';
+// var token = '';
+var token = require('./token.js').token;
 const Discord = require("discord.js");
 const client = new Discord.Client();
 var newUsers = new Discord.Collection();
@@ -105,7 +106,7 @@ client.on("message", msg => {
       let barks = require('./barks.js').barks;
       // Select a random woof from Barks array
       let pickBark = barks[Math.floor(Math.random() * barks.length)]; 
-      msg.channel.sendMessage(":dog: Richie D. The Pup: " + pickBark + " :dog:");
+      msg.channel.sendMessage(":dog: Richard Divine The Pup: " + pickBark + " :dog:");
     console.log("WOOF WOOF");
     }
 
