@@ -166,7 +166,7 @@ client.on("message", msg => {
 //Secret phrase triggers bot racism.
 client.on("message", msg => {
     if (msg.content.includes("14 words")) {
-        msg.channel.sendMessage(`https://cdn.discordapp.com/attachments/272344699434696705/273455453730635776/Dt8IGlA.png`);
+        msg.channel.sendMessage(`https://i.imgur.com/6UrhSq4.png`);
         console.log(currentdate + " - Smashed Racism");
     }
 });
