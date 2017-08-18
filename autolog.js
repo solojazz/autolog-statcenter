@@ -25,7 +25,7 @@ plugBot.connect('exp-noise-weirdshit-novelty')
 plugBot.on('roomJoin', function(room) {
     console.log("Plug bot has joined " + room);
 });
-var plugtrack = plugBot.getMedia().title;
+
 var plugwoot = plugBot.woot();
 
 //### !commands ###
@@ -43,10 +43,12 @@ client.on("message", msg => {
 
 //!plug
 if (msg.content.startsWith(prefix + "plug")) {
+  var plugtrack = plugBot.getMedia().title;
+  var plugartist = plugBot.getMedia().author;
   msg.channel.send(`https://plug.dj/exp-noise-weirdshit-novelty`);
-  msg.channel.send('Now playing: '+plugtrack);
+  msg.channel.send('Now playing: ' + plugartist + ' - ' +plugtrack);
   console.log("Someone inquired about plug");
-  console.log(plugtrack + `is now playing...`);
+  console.log(plugBot.getMedia().title);
 }
 
 //!johnsim
