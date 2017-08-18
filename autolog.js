@@ -42,14 +42,15 @@ client.on("message", msg => {
   }
 
 //!plug
-if (msg.content.startsWith(prefix + "plug")) {
-  var plugtrack = plugBot.getMedia().title;
-  var plugartist = plugBot.getMedia().author;
-  msg.channel.send(`https://plug.dj/exp-noise-weirdshit-novelty`);
-  msg.channel.send('Now playing: ' + plugartist + ' - ' +plugtrack);
-  console.log("Someone inquired about plug");
-  console.log(plugBot.getMedia().title);
-}
+//need to add a callback incase nobody is playing anything
+// if (msg.content.startsWith(prefix + "plug")) {
+//   var plugtrack = plugBot.getMedia().title;
+//   var plugartist = plugBot.getMedia().author;
+//   msg.channel.send(`https://plug.dj/exp-noise-weirdshit-novelty`);
+//   msg.channel.send('Now playing: ' + plugartist + ' - ' +plugtrack);
+//   console.log("Someone inquired about plug");
+//   console.log(plugBot.getMedia().title);
+// }
 
 //!johnsim
   if (msg.content.startsWith(prefix + "johnsim")) {
