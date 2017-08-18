@@ -12,6 +12,21 @@ var delay=500; //.5 second
 var currentYear = new Date().getFullYear();
 var currentdate = new Date();
 var datetime = currentdate.getDate() + "/" + (parseInt(currentdate.getMonth()) + 1) + "/" + currentdate.getFullYear();
+//plug stuff
+// const PlugAPI = require('plugapi');
+// var plugusername = require('./token.js').plugusername;
+// var plugpw = require('./token.js').plugpw;
+// var plugBot = new PlugAPI ({
+//   email: plugusername,
+//   password: plugpw,
+// });
+
+// plugBot.connect('exp-noise-weirdshit-novelty')
+// plugBot.on('roomJoin', function(room) {
+//     console.log("Plug bot has joined " + room);
+// });
+// var plugtrack = plugBot.getMedia().title;
+// var plugwoot = plugBot.woot();
 
 //### !commands ###
 
@@ -25,6 +40,14 @@ client.on("message", msg => {
    msg.channel.sendMessage(`I can !johnsim [insert-opinion-here], !hug, !grouphug !currentyear, !cointoss, !doggo, !hype, !gender or !opinion [@-user-here].`);
    console.log(currentdate + " - Someone got help.");
   }
+
+//!plug
+// if (msg.content.startsWith(prefix + "plug")) {
+//   msg.channel.send(`https://plug.dj/exp-noise-weirdshit-novelty`);
+//   msg.channel.send('Now playing: '+plugtrack);
+//   console.log("Someone inquired about plug");
+//   console.log(plugtrack + `is now playing...`);
+// }
 
 //!johnsim
   if (msg.content.startsWith(prefix + "johnsim")) {
